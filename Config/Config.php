@@ -4,11 +4,11 @@
 	const BASE_URL = "http://localhost/Proyecto_Generico";
 
 	//Zona horaria
-	//date_default_timezone_set('America/Guatemala');
+	//date_default_timezone_set('America/Honduras');
 
 	//Datos de conexión a Base de Datos
 	const DB_HOST = "localhost";
-	const DB_NAME = "mydb";
+	const DB_NAME = "tienda";
 	const DB_USER = "root";
 	const DB_PASSWORD = "";
 	const DB_CHARSET = "utf8";
@@ -21,10 +21,10 @@
 	const SMONEY = "Q";
 
 	//Datos envio de correo
-	const NOMBRE_REMITENTE = "Tienda Virtual";
-	const EMAIL_REMITENTE = "no-reply@abelosh.com";
-	const NOMBRE_EMPESA = "Tienda Virtual";
-	const WEB_EMPRESA = "www.abelosh.com";
+	const NOMBRE_REMITENTE = "Empresa Generica";
+	const EMAIL_REMITENTE = "empresa_generica@ejemplo.com";
+	const NOMBRE_EMPESA = "Empresa Generica";
+	const WEB_EMPRESA = "www.Empresa_Generica.com";
 	
 
 

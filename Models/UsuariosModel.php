@@ -8,6 +8,7 @@
 		private $strApellido;
 		private $intTelefono;
 		private $strEmail;
+		private $strUsername;
 		private $strPassword;
 		private $strToken;
 		private $intTipoId;
@@ -21,38 +22,40 @@
 			parent::__construct();
 		}	
 
-		public function insertUsuario(string $identificacion, string $nombre, string $apellido, int $telefono, string $email, string $password, int $tipoid, int $status){
+		public function insertUsuario(string $identificacion, string $nombre, string $apellido, int $telefono, string $email, string $username,  string $password, int $tipoid, int $status){
 
 			$this->strIdentificacion = $identificacion;
 			$this->strNombre = $nombre;
 			$this->strApellido = $apellido;
 			$this->intTelefono = $telefono;
 			$this->strEmail = $email;
+			$this->strUsername = $username;
 			$this->strPassword = $password;
 			$this->intTipoId = $tipoid;
 			$this->intStatus = $status;
 			$return = 0;
 
-			$sql = "SELECT * FROM persona WHERE 
+			$sql = "SELECT * FROM persona WHERE  /*Cambiar a tbl_ms_usuario*/
 					email_user = '{$this->strEmail}' or identificacion = '{$this->strIdentificacion}' ";
 			$request = $this->select_all($sql);
 
 			if(empty($request))
 			{
-				$query_insert  = "INSERT INTO persona(identificacion,nombres,apellidos,telefono,email_user,password,rolid,status) 
-								  VALUES(?,?,?,?,?,?,?,?)";
+				$query_insert  = "INSERT INTO persona(identificacion,nombres,apellidos,telefono,email_user,username,password,rolid,status) /*Cambiar a tbl_ms_usuario*/
+								  VALUES(?,?,?,?,?,?,?,?,?)";
 	        	$arrData = array($this->strIdentificacion,
         						$this->strNombre,
         						$this->strApellido,
         						$this->intTelefono,
         						$this->strEmail,
+								$this->strUsername,
         						$this->strPassword,
         						$this->intTipoId,
         						$this->intStatus);
 	        	$request_insert = $this->insert($query_insert,$arrData);
 	        	$return = $request_insert;
 			}else{
-				$return = "exist";
+				$return = "existe";
 			}
 	        return $return;
 		}
@@ -63,8 +66,8 @@
 			if($_SESSION['idUser'] != 1 ){
 				$whereAdmin = " and p.idpersona != 1 ";
 			}
-			$sql = "SELECT p.idpersona,p.identificacion,p.nombres,p.apellidos,p.telefono,p.email_user,p.status,r.idrol,r.nombrerol 
-					FROM persona p 
+			$sql = "SELECT p.idpersona,p.identificacion,p.nombres,p.apellidos,p.telefono,p.email_user,p.username,p.status,r.idrol,r.nombrerol 
+					FROM persona p  /*Cambiar a tbl_ms_usuario*/
 					INNER JOIN rol r
 					ON p.rolid = r.idrol
 					WHERE p.status != 0 ".$whereAdmin;
@@ -73,8 +76,8 @@
 		}
 		public function selectUsuario(int $idpersona){
 			$this->intIdUsuario = $idpersona;
-			$sql = "SELECT p.idpersona,p.identificacion,p.nombres,p.apellidos,p.telefono,p.email_user,p.nit,p.nombrefiscal,p.direccionfiscal,r.idrol,r.nombrerol,p.status, DATE_FORMAT(p.datecreated, '%d-%m-%Y') as fechaRegistro 
-					FROM persona p
+			$sql = "SELECT p.idpersona,p.identificacion,p.nombres,p.apellidos,p.telefono,p.email_user,p.dni,p.nombrefiscal,p.direccionfiscal,r.idrol,r.nombrerol,p.status, DATE_FORMAT(p.datecreated, '%d-%m-%Y') as fechaRegistro 
+					FROM persona p /*Cambiar a tbl_ms_usuario*/
 					INNER JOIN rol r
 					ON p.rolid = r.idrol
 					WHERE p.idpersona = $this->intIdUsuario";

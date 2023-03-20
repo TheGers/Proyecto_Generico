@@ -13,11 +13,12 @@ document.addEventListener('DOMContentLoaded', function(){
             "url": " "+base_url+"/Usuarios/getUsuarios",
             "dataSrc":""
         },
-        "columns":[
+        "columns":[ //cadena de columnas en la  tabla
             {"data":"idpersona"},
             {"data":"nombres"},
             {"data":"apellidos"},
             {"data":"email_user"},
+            {"data":"username"},
             {"data":"telefono"},
             {"data":"nombrerol"},
             {"data":"status"},
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 "extend": "excelHtml5",
                 "text": "<i class='fas fa-file-excel'></i> Excel",
                 "titleAttr":"Esportar a Excel",
-                "className": "btn btn-success"
+                "className": "btn btn-success" //botones de exportacion
             },{
                 "extend": "pdfHtml5",
                 "text": "<i class='fas fa-file-pdf'></i> PDF",
@@ -61,12 +62,13 @@ document.addEventListener('DOMContentLoaded', function(){
             let strNombre = document.querySelector('#txtNombre').value;
             let strApellido = document.querySelector('#txtApellido').value;
             let strEmail = document.querySelector('#txtEmail').value;
+            let strUsername = document.querySelector('#txtUsername').value;
             let intTelefono = document.querySelector('#txtTelefono').value;
             let intTipousuario = document.querySelector('#listRolid').value;
             let strPassword = document.querySelector('#txtPassword').value;
             let intStatus = document.querySelector('#listStatus').value;
 
-            if(strIdentificacion == '' || strApellido == '' || strNombre == '' || strEmail == '' || intTelefono == '' || intTipousuario == '')
+            if(strIdentificacion == '' || strApellido == '' || strNombre == '' || strEmail == '' || strUsername == '' || intTelefono == '' || intTipousuario == '')
             {
                 swal("Atención", "Todos los campos son obligatorios." , "error");
                 return false;
@@ -99,9 +101,10 @@ document.addEventListener('DOMContentLoaded', function(){
                             rowTable.cells[1].textContent = strNombre;
                             rowTable.cells[2].textContent = strApellido;
                             rowTable.cells[3].textContent = strEmail;
-                            rowTable.cells[4].textContent = intTelefono;
-                            rowTable.cells[5].textContent = document.querySelector("#listRolid").selectedOptions[0].text;
-                            rowTable.cells[6].innerHTML = htmlStatus;
+                            rowTable.cells[4].textContent = strUsername;
+                            rowTable.cells[5].textContent = intTelefono;
+                            rowTable.cells[6].textContent = document.querySelector("#listRolid").selectedOptions[0].text;
+                            rowTable.cells[7].innerHTML = htmlStatus;
                             rowTable="";
                         }
                         $('#modalFormUsuario').modal("hide");

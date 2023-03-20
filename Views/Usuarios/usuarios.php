@@ -28,23 +28,15 @@
                           <th>Nombres</th>
                           <th>Apellidos</th>
                           <th>Email</th>
+                          <th>Usuario</th>
                           <th>Teléfono</th>
                           <th>Rol</th>
-                          <th>Status</th>
+                          <th>Estado</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>Carlos</td>
-                          <td>Henández</td>
-                          <td>carlos@info.com</td>
-                          <td>78542155</td>
-                          <td>Administrador</td>
-                          <td>Activo</td>
-                          <td></td>
-                        </tr>
+                       
                       </tbody>
                     </table>
                   </div>
