@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
-            <div class="tile-body">Inicio</div>
+            <div class="tile-body">Dashboard</div>
           </div>
         </div>
       </div>

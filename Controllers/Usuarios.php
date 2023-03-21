@@ -18,7 +18,7 @@
 				header("Location:".base_url().'/dashboard');
 			}
 			$data['page_tag'] = "Usuarios";
-			$data['page_title'] = "Usuarios";
+			$data['page_title'] = "USUARIOS <small>Tienda Virtual</small>";
 			$data['page_name'] = "usuarios";
 			$data['page_functions_js'] = "functions_usuarios.js";
 			$this->views->getView($this,"usuarios",$data);
@@ -26,7 +26,7 @@
 
 		public function setUsuario(){
 			if($_POST){			
-				if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido']) || empty($_POST['txtTelefono']) || empty($_POST['txtEmail']) || empty($_POST['txtUsername']) || empty($_POST['listRolid']) || empty($_POST['listStatus']) )
+				if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido']) || empty($_POST['txtUsername']) || empty($_POST['txtTelefono']) || empty($_POST['txtEmail']) || empty($_POST['listRolid']) || empty($_POST['listStatus']) )
 				{
 					$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
 				}else{ 
@@ -82,7 +82,7 @@
 							$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 						}
 					}else if($request_user == 'exist'){
-						$arrResponse = array('status' => false, 'msg' => '¡Atención! el correo electronico o el numero de identidad ya existe, ingrese otro.');		
+						$arrResponse = array('status' => false, 'msg' => '¡Atención! el email o la identificación ya existe, ingrese otro.');		
 					}else{
 						$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
 					}

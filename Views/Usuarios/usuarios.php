@@ -27,11 +27,11 @@
                           <th>ID</th>
                           <th>Nombres</th>
                           <th>Apellidos</th>
-                          <th>Email</th>
+                          <th>Correo </th>
                           <th>Usuario</th>
                           <th>Teléfono</th>
                           <th>Rol</th>
-                          <th>Estado</th>
+                          <th>Status</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>

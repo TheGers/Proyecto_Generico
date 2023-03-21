@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
             "url": " "+base_url+"/Usuarios/getUsuarios",
             "dataSrc":""
         },
-        "columns":[ //cadena de columnas en la  tabla
+        "columns":[
             {"data":"idpersona"},
             {"data":"nombres"},
             {"data":"apellidos"},
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 "extend": "excelHtml5",
                 "text": "<i class='fas fa-file-excel'></i> Excel",
                 "titleAttr":"Esportar a Excel",
-                "className": "btn btn-success" //botones de exportacion
+                "className": "btn btn-success"
             },{
                 "extend": "pdfHtml5",
                 "text": "<i class='fas fa-file-pdf'></i> PDF",
@@ -54,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function(){
         "order":[[0,"desc"]]  
     });
 
+
+    //insertar usuarios 
     if(document.querySelector("#formUsuario")){
         let formUsuario = document.querySelector("#formUsuario");
         formUsuario.onsubmit = function(e) {
@@ -127,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function(){
             let strIdentificacion = document.querySelector('#txtIdentificacion').value;
             let strNombre = document.querySelector('#txtNombre').value;
             let strApellido = document.querySelector('#txtApellido').value;
+            let strUsername = document.querySelector('#txtUsername').value;
             let intTelefono = document.querySelector('#txtTelefono').value;
             let strPassword = document.querySelector('#txtPassword').value;
             let strPasswordConfirm = document.querySelector('#txtPasswordConfirm').value;
@@ -278,6 +281,7 @@ function fntViewUsuario(idpersona){
                 document.querySelector("#celApellido").innerHTML = objData.data.apellidos;
                 document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
                 document.querySelector("#celEmail").innerHTML = objData.data.email_user;
+                document.querySelector("#celUsername").innerHTML = objData.data.username;
                 document.querySelector("#celTipoUsuario").innerHTML = objData.data.nombrerol;
                 document.querySelector("#celEstado").innerHTML = estadoUsuario;
                 document.querySelector("#celFechaRegistro").innerHTML = objData.data.fechaRegistro; 
@@ -311,6 +315,7 @@ function fntEditUsuario(element,idpersona){
                 document.querySelector("#txtIdentificacion").value = objData.data.identificacion;
                 document.querySelector("#txtNombre").value = objData.data.nombres;
                 document.querySelector("#txtApellido").value = objData.data.apellidos;
+                document.querySelector("#txtUsername").value = objData.data.username;
                 document.querySelector("#txtTelefono").value = objData.data.telefono;
                 document.querySelector("#txtEmail").value = objData.data.email_user;
                 document.querySelector("#listRolid").value =objData.data.idrol;

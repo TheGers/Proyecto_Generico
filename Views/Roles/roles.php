@@ -29,7 +29,7 @@
                           <th>ID</th>
                           <th>Nombre</th>
                           <th>Descripción</th>
-                          <th>Estado</th>
+                          <th>Status</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>

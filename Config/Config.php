@@ -1,10 +1,10 @@
 <?php 
 	
 	//define("BASE_URL", "http://localhost/tienda_virtual/");
-	const BASE_URL = "http://localhost/Proyecto_Generico";
+	const BASE_URL = "http://localhost/store";
 
 	//Zona horaria
-	//date_default_timezone_set('America/Honduras');
+	//date_default_timezone_set('America/Guatemala');
 
 	//Datos de conexión a Base de Datos
 	const DB_HOST = "localhost";
@@ -21,10 +21,10 @@
 	const SMONEY = "Q";
 
 	//Datos envio de correo
-	const NOMBRE_REMITENTE = "Empresa Generica";
-	const EMAIL_REMITENTE = "empresa_generica@ejemplo.com";
-	const NOMBRE_EMPESA = "Empresa Generica";
-	const WEB_EMPRESA = "www.Empresa_Generica.com";
+	const NOMBRE_REMITENTE = "Tienda Virtual";
+	const EMAIL_REMITENTE = "no-reply@abelosh.com";
+	const NOMBRE_EMPESA = "Tienda Virtual";
+	const WEB_EMPRESA = "www.abelosh.com";
 	
 
 

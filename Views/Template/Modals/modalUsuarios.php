@@ -15,7 +15,7 @@
 
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="txtIdentificacion">Numero de Indetidad</label>
+                  <label for="txtIdentificacion">Identificación</label>
                   <input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion" required="">
                 </div>
               </div>
@@ -39,7 +39,7 @@
                   <input type="email" class="form-control valid validEmail" id="txtEmail" name="txtEmail" required="">
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="txtApellido">Nombre de Usuario</label>
+                  <label for="txtUsername">Usuario</label>
                   <input type="text" class="form-control valid validText" id="txtUsername" name="txtUsername" required="">
                 </div>
               </div>
@@ -50,7 +50,7 @@
                     </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="listStatus">Estado</label>
+                    <label for="listStatus">Status</label>
                     <select class="form-control selectpicker" id="listStatus" name="listStatus" required >
                         <option value="1">Activo</option>
                         <option value="2">Inactivo</option>
@@ -59,7 +59,7 @@
              </div>
              <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="txtPassword">Contraseña</label>
+                  <label for="txtPassword">Password</label>
                   <input type="password" class="form-control" id="txtPassword" name="txtPassword" >
                 </div>
              </div>
@@ -86,7 +86,42 @@
       <div class="modal-body">
         <table class="table table-bordered">
           <tbody>
-          
+            <tr>
+              <td>Identificación:</td>
+              <td id="celIdentificacion">*******</td>
+            </tr>
+            <tr>
+              <td>Nombres:</td>
+              <td id="celNombre">*******</td>
+            </tr>
+            <tr>
+              <td>Apellidos:</td>
+              <td id="celApellido">*******</td>
+            </tr>
+            <tr>
+              <td>Teléfono:</td>
+              <td id="celTelefono">*******</td>
+            </tr>
+            <tr>
+              <td>Email (Usuario):</td>
+              <td id="celEmail">*******</td>
+            </tr>
+            <tr>
+              <td>Usuario:</td>
+              <td id="celUsername">*******</td>
+            </tr>
+            <tr>
+              <td>Tipo Usuario:</td>
+              <td id="celTipoUsuario">*******</td>
+            </tr>
+            <tr>
+              <td>Estado:</td>
+              <td id="celEstado">*******</td>
+            </tr>
+            <tr>
+              <td>Fecha registro:</td>
+              <td id="celFechaRegistro">*******</td>
+            </tr>
           </tbody>
         </table>
       </div>
