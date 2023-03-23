@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', function(){
 		formLogin.onsubmit = function(e) {
 			e.preventDefault();
 
-			let strEmail = document.querySelector('#txtEmail').value;
+			let strUsername = document.querySelector('#txtUsername').value;
 			let strPassword = document.querySelector('#txtPassword').value;
 
-			if(strEmail == "" || strPassword == "")
+			if(strUsername == "" || strPassword == "")
 			{
-				swal("Por favor", "Escribe usuario y contraseñaa.", "error");
+				swal("Por favor", "Escribe un  usuario y una contraseñaa.", "error");
 				return false;
 			}else{
 				divLoading.style.display = "flex";

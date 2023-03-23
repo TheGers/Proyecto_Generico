@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Abel OSH">
+    <meta name="author" content="Gers">
     <meta name="theme-color" content="#009688">
     <link rel="shortcut icon" href="<?= media();?>/images/favicon.ico">
     <!-- Main CSS-->
@@ -31,7 +31,7 @@
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>INICIAR SESIÓN</h3>
           <div class="form-group">
             <label class="control-label">USUARIO</label>
-            <input id="txtEmail" name="txtEmail" class="form-control" type="email" placeholder="Email" autofocus>
+            <input id="txtUsername" name="txtUsername" class="form-control" type="text" placeholder="Nombre de Usuario" autofocus>
           </div>
           <div class="form-group">
             <label class="control-label">CONTRASEÑA</label>
