@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 
 	class Permisos extends Controllers{
 		public function __construct()
