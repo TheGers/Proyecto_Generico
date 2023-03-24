@@ -17,7 +17,7 @@
 			$this->strUsuario = $usuario;
 			$this->strPassword = $password;
 			$sql = "SELECT idpersona,status FROM persona WHERE 
-					email_user = '$this->strUsuario' and 
+					username = '$this->strUsuario' and 
 					password = '$this->strPassword' and 
 					status != 0 ";
 			$request = $this->select($sql);
@@ -33,6 +33,7 @@
 							p.apellidos,
 							p.telefono,
 							p.email_user,
+							p.username,
 							p.nit,
 							p.nombrefiscal,
 							p.direccionfiscal,
