@@ -17,14 +17,14 @@
 
 		public function selectModulos()
 		{
-			$sql = "SELECT * FROM modulo WHERE status != 0";
+			$sql = "SELECT * FROM tbl_ms_modulo WHERE status != 0";
 			$request = $this->select_all($sql);
 			return $request;
 		}	
 		public function selectPermisosRol(int $idrol)
 		{
 			$this->intRolid = $idrol;
-			$sql = "SELECT * FROM permisos WHERE rolid = $this->intRolid";
+			$sql = "SELECT * FROM tbl_ms_permisos WHERE rolid = $this->intRolid";
 			$request = $this->select_all($sql);
 			return $request;
 		}
@@ -32,7 +32,7 @@
 		public function deletePermisos(int $idrol)
 		{
 			$this->intRolid = $idrol;
-			$sql = "DELETE FROM permisos WHERE rolid = $this->intRolid";
+			$sql = "DELETE FROM tbl_ms_permisos WHERE rolid = $this->intRolid";
 			$request = $this->delete($sql);
 			return $request;
 		}
@@ -44,7 +44,7 @@
 			$this->w = $w;
 			$this->u = $u;
 			$this->d = $d;
-			$query_insert  = "INSERT INTO permisos(rolid,moduloid,r,w,u,d) VALUES(?,?,?,?,?,?)";
+			$query_insert  = "INSERT INTO tbl_ms_permisos(rolid,moduloid,r,w,u,d) VALUES(?,?,?,?,?,?)";
         	$arrData = array($this->intRolid, $this->intModuloid, $this->r, $this->w, $this->u, $this->d);
         	$request_insert = $this->insert($query_insert,$arrData);		
 	        return $request_insert;
@@ -59,8 +59,8 @@
 						   p.w,
 						   p.u,
 						   p.d 
-					FROM permisos p 
-					INNER JOIN modulo m
+					FROM tbl_ms_permisos p 
+					INNER JOIN tbl_ms_modulo m
 					ON p.moduloid = m.idmodulo
 					WHERE p.rolid = $this->intRolid";
 			$request = $this->select_all($sql);
