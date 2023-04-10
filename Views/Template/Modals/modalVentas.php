@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modalFormUsuario" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modalFormVentas" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header headerRegister">
@@ -9,8 +9,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="formUsuario" name="formUsuario" class="form-horizontal">
-                    <input type="hidden" id="idUsuario" name="idUsuario" value="">
+                <form id="formVentas" name="formVentas" class="form-horizontal">
+                    <input type="hidden" id="idVenta" name="idVenta" value="">
                     <p class="text-primary">Todos los campos son obligatorios.</p>
 
                     <div class="form-row">
